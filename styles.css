@@ -1,23 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
+*, ::before, ::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    width: 100vw;
-    height: 100vh;
-    background-color: hsl(221, 100%, 96%);
+html {
     font-family: "Hanken Grotesk", sans-serif;
+}
+
+body {
+    min-height: 100dvh;
+    padding: 2rem;
+    background-color: hsl(221, 100%, 96%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-
 
 .score-panel {
     width: 525px;
@@ -235,4 +236,28 @@ footer a:hover {
 
 footer a:active {
     color: white;
+}
+
+
+
+@media (max-width: 600px) {
+    body {
+        padding: min(2rem, 5%);
+    }
+
+    .score-panel {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+    
+    .score-result {
+        width: 100%;
+        height: auto;
+    }
+
+    .score-summary {
+        width: 100%;
+        height: auto;
+    }
 }
